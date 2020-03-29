@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: clients-pod
+    labels:
+        component: web
+spec:
+    containers:
+        - name: client
+          image: sravanreddyguduru7/angular-client:v1
+          ports:
+            - containerPort: 4200

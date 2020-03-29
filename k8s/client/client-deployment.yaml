@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-delpoyment
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      component: web
+  template:
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+        - name: client
+          image: sravanreddyguduru7/angular-client:v1
+          ports:
+            - containerPort: 80
